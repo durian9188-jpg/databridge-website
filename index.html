@@ -244,6 +244,142 @@ h1{letter-spacing:-2px}
   .db-plan{padding:29px}
 }
 
+
+/* DataBridge V1.4 — real application screenshot */
+.databridge-real-screenshot {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+
+/* DB_V15_LAYOUT_CSS */
+
+.preview.db-v15 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 42px;
+  align-items: center;
+  padding: 42px;
+  margin-bottom: 85px;
+  text-align: left;
+  overflow: hidden;
+  background: linear-gradient(135deg, #faf9f6, #f0ece5);
+}
+
+.db-v15-copy {
+  min-width: 0;
+}
+
+.db-v15-label {
+  display: block;
+  margin-bottom: 17px;
+  color: #90745e;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.db-v15-copy h2 {
+  font-size: clamp(27px, 3vw, 38px);
+  line-height: 1.22;
+  letter-spacing: -.035em;
+  margin: 0 0 20px;
+}
+
+.db-v15-description {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #666;
+  margin: 0 0 26px;
+}
+
+.db-v15-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.db-v15-step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 14px;
+  border: 1px solid #e7e3dd;
+  border-radius: 12px;
+  background: rgba(255,255,255,.82);
+  font-size: 13px;
+  color: #333;
+}
+
+.db-v15-step b {
+  font-size: 11px;
+  color: #967a64;
+}
+
+.db-v15-note {
+  margin-top: 21px;
+  font-size: 12px;
+  color: #888;
+  line-height: 1.7;
+}
+
+.db-v15-visual {
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.db-v15-window {
+  width: 100%;
+  max-width: 440px;
+  height: 385px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.db-v15-window img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: top center;
+}
+
+.db-v15-window img[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .preview.db-v15 {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 26px 20px;
+    margin-bottom: 55px;
+  }
+
+  .db-v15-copy h2 {
+    font-size: 28px;
+  }
+
+  .db-v15-window {
+    max-width: 360px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 390px) {
+  .preview.db-v15 {
+    padding: 22px 16px;
+  }
+
+  .db-v15-window {
+    height: 235px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -295,25 +431,93 @@ h1{letter-spacing:-2px}
 <p class="note" data-en="Free public beta · Apple Silicon · macOS" data-zh="免费公开测试版 · 适用于 Apple 芯片 Mac">Free public beta · Apple Silicon · macOS</p>
 </div>
 
-<div class="preview">
-<div class="preview-inner">
-<div class="window-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
-<div class="mock-body">
-<div class="mock-sidebar">
-<div class="mock-line"></div><div class="mock-line"></div><div class="mock-line"></div><div class="mock-line"></div>
+
+<!-- DB_V15_LAYOUT_START -->
+<div class="preview db-v15">
+
+  <div class="db-v15-copy">
+
+    <span class="db-v15-label"
+      data-en="A simpler spreadsheet workflow"
+      data-zh="更简单的表格整理方式">
+      A simpler spreadsheet workflow
+    </span>
+
+    <h2
+      data-en="Stop copying between spreadsheets."
+      data-zh="几十个表格，不必一个个复制粘贴。">
+      Stop copying between spreadsheets.
+    </h2>
+
+    <p class="db-v15-description"
+      data-en="Combine Excel and CSV files without repeatedly opening files and copying data between them."
+      data-zh="多个 Excel 或 CSV 文件需要汇总？不必反复打开文件、复制数据，在一个工作台完成整理。">
+      Combine Excel and CSV files without repeatedly opening files and copying data between them.
+    </p>
+
+    <div class="db-v15-steps">
+
+      <div class="db-v15-step">
+        <b>01</b>
+        <span
+          data-en="Add your Excel or CSV files"
+          data-zh="添加 Excel 或 CSV 文件">
+          Add your Excel or CSV files
+        </span>
+      </div>
+
+      <div class="db-v15-step">
+        <b>02</b>
+        <span
+          data-en="Choose merge, cleanup, or join"
+          data-zh="选择合并、智能整理或字段关联">
+          Choose merge, cleanup, or join
+        </span>
+      </div>
+
+      <div class="db-v15-step">
+        <b>03</b>
+        <span
+          data-en="Review and export your result"
+          data-zh="检查并导出处理结果">
+          Review and export your result
+        </span>
+      </div>
+
+    </div>
+
+    <p class="db-v15-note"
+      data-en="Local processing on your Mac. Original files stay intact."
+      data-zh="在 Mac 本地处理，保留原始文件。">
+      Local processing on your Mac. Original files stay intact.
+    </p>
+
+  </div>
+
+  <div class="db-v15-visual">
+
+    <div class="db-v15-window">
+
+      <img
+        id="db-v15-en"
+        src="assets/databridge-app-en.png"
+        alt="DataBridge English spreadsheet workspace"
+      >
+
+      <img
+        id="db-v15-zh"
+        src="assets/databridge-app-zh.png"
+        alt="DataBridge 中文表格工作台"
+        hidden
+      >
+
+    </div>
+
+  </div>
+
 </div>
-<div class="mock-main">
-<div class="mock-title">DataBridge</div>
-<div class="mock-desc" data-en="Your everyday file workspace" data-zh="你的日常文件工作空间">Your everyday file workspace</div>
-<div class="mock-cards">
-<div class="mock-card">▤ &nbsp; Excel / CSV</div>
-<div class="mock-card">▧ &nbsp; Images</div>
-<div class="mock-card">▷ &nbsp; Video</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!-- DB_V15_LAYOUT_END -->
+
 </div>
 
 <section id="features">
@@ -478,5 +682,51 @@ setLanguage(savedLanguage);
 
 
 </script>
+
+<script>
+/* DB_V15_LANGUAGE_SYNC */
+(function () {
+  function syncDataBridgeScreenshot() {
+    const heading = document.querySelector(".db-v15-copy h2");
+    const enImage = document.getElementById("db-v15-en");
+    const zhImage = document.getElementById("db-v15-zh");
+
+    if (!heading || !enImage || !zhImage) return;
+
+    const currentText = heading.textContent.trim();
+    const chineseText = heading.getAttribute("data-zh");
+
+    const isChinese = currentText === chineseText;
+
+    enImage.hidden = isChinese;
+    zhImage.hidden = !isChinese;
+  }
+
+  function initialize() {
+    const heading = document.querySelector(".db-v15-copy h2");
+
+    if (!heading) return;
+
+    const observer = new MutationObserver(function () {
+      syncDataBridgeScreenshot();
+    });
+
+    observer.observe(heading, {
+      childList: true,
+      characterData: true,
+      subtree: true
+    });
+
+    syncDataBridgeScreenshot();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initialize);
+  } else {
+    initialize();
+  }
+})();
+</script>
+
 </body>
 </html>
