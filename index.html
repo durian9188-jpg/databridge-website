@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DataBridge is a simple desktop workspace for Excel, CSV, images, video and documents.">
+<title>DataBridge — Make files work together.</title>
+<style>
+:root{
+  --ink:#171717;
+  --muted:#777;
+  --line:#e9e9e7;
+  --paper:#fff;
+  --soft:#f7f7f5;
+  --accent:#8d7359;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.container{width:min(1100px,calc(100% - 48px));margin:auto}
+header{height:76px;border-bottom:1px solid var(--line)}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-size:22px;font-weight:750;letter-spacing:-.8px}
+.brand span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-link{font-size:13px;color:#555}
+.lang{border:1px solid var(--line);background:white;border-radius:9px;padding:9px 12px;cursor:pointer}
+.hero{text-align:center;padding:112px 0 85px}
+.badge{display:inline-block;padding:8px 14px;border:1px solid var(--line);border-radius:30px;font-size:12px;color:#777;background:#fafafa}
+h1{font-size:clamp(45px,7vw,82px);letter-spacing:-4px;line-height:1.08;margin:30px 0 22px;font-weight:750}
+.hero p{font-size:18px;color:#737373;line-height:1.8;margin:0 auto;max-width:610px}
+.actions{display:flex;gap:12px;justify-content:center;margin-top:38px;flex-wrap:wrap}
+.btn{padding:15px 25px;border-radius:11px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:10px}
+.primary{background:#191919;color:white}
+.secondary{background:#f4f4f2;color:#888;border:1px solid #eaeae7;cursor:not-allowed}
+.note{font-size:12px!important;margin-top:17px!important;color:#999!important}
+.preview{margin:10px auto 110px;background:linear-gradient(145deg,#f8f6f1,#eeeae3);border:1px solid #e8e4dd;border-radius:25px;padding:65px 35px;text-align:center}
+.preview-inner{max-width:740px;margin:auto;background:white;border:1px solid #e5e5e5;border-radius:16px;box-shadow:0 20px 65px #0000000b;overflow:hidden;text-align:left}
+.window-top{height:42px;border-bottom:1px solid #eee;display:flex;align-items:center;gap:7px;padding:0 17px;background:#fcfcfc}
+.dot{height:10px;width:10px;border-radius:50%;background:#dedede}
+.mock-body{display:flex;min-height:290px}
+.mock-sidebar{width:165px;border-right:1px solid #eee;padding:25px 18px;background:#fafafa}
+.mock-line{height:10px;background:#eaeaea;border-radius:4px;margin-bottom:20px}
+.mock-main{flex:1;padding:33px}
+.mock-title{font-size:24px;font-weight:650;letter-spacing:-.7px}
+.mock-desc{color:#888;font-size:13px;margin-top:10px}
+.mock-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:35px}
+.mock-card{height:100px;background:#f8f8f7;border:1px solid #ededeb;border-radius:12px;padding:16px;font-size:12px;color:#666}
+section{padding:75px 0}
+.section-heading{text-align:center;margin-bottom:50px}
+.section-heading h2{font-size:38px;letter-spacing:-1.5px;margin:0 0 15px}
+.section-heading p{color:#888;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{padding:29px;border:1px solid var(--line);border-radius:16px;min-height:190px;background:white}
+.card .icon{font-size:27px;margin-bottom:24px}
+.card h3{font-size:17px;margin:0 0 12px}
+.card p{font-size:13px;color:#888;line-height:1.8;margin:0}
+.privacy{background:var(--soft);border-radius:22px;padding:55px;margin-top:45px}
+.privacy h2{font-size:30px;letter-spacing:-1px}
+.privacy p{max-width:720px;color:#777;line-height:1.9}
+.download{text-align:center;padding:110px 0}
+.download h2{font-size:44px;letter-spacing:-2px}
+.download p{color:#888}
+footer{border-top:1px solid var(--line);padding:30px 0;color:#999;font-size:12px}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:700px){
+header{height:66px}
+.nav-right{gap:12px}
+.nav-link{display:none}
+.hero{padding:85px 0 65px}
+h1{letter-spacing:-2px}
+.preview{padding:25px 12px;margin-bottom:40px}
+.mock-sidebar{width:80px;padding:20px 10px}
+.mock-main{padding:22px}
+.mock-cards{grid-template-columns:1fr}
+.mock-card{height:55px}
+.grid{grid-template-columns:1fr}
+.privacy{padding:30px}
+.section-heading h2{font-size:30px}
+}
+
+/* DataBridge language dropdown */
+.language-picker{
+  position:relative;
+}
+.language-trigger{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-width:76px;
+  height:38px;
+  font-size:13px;
+  font-weight:600;
+  color:#333;
+  transition:background .15s ease;
+}
+.language-trigger:hover{
+  background:#f7f7f5;
+}
+.language-chevron{
+  font-size:17px;
+  line-height:1;
+  color:#888;
+}
+.language-menu{
+  position:absolute;
+  top:calc(100% + 9px);
+  right:0;
+  width:166px;
+  padding:6px;
+  background:#fff;
+  border:1px solid #e9e9e7;
+  border-radius:12px;
+  box-shadow:0 12px 35px rgba(0,0,0,.09);
+  z-index:100;
+}
+.language-menu[hidden]{
+  display:none;
+}
+.language-menu button{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  padding:11px 12px;
+  border:0;
+  border-radius:8px;
+  background:transparent;
+  color:#444;
+  font:inherit;
+  font-size:13px;
+  text-align:left;
+  cursor:pointer;
+}
+.language-menu button:hover{
+  background:#f6f6f4;
+}
+.language-menu button[aria-checked="true"]{
+  color:#171717;
+  font-weight:600;
+}
+.language-check{
+  color:#8d7359;
+}
+.language-trigger:focus-visible,
+.language-menu button:focus-visible{
+  outline:2px solid #8d7359;
+  outline-offset:2px;
+}
+
+
+/* DataBridge V1.1: additional informational sections */
+.db-extra{
+  border-top:1px solid var(--line);
+}
+.db-extra .section-heading p{
+  max-width:680px;
+  margin:0 auto;
+  line-height:1.85;
+}
+.db-extra .card{
+  min-height:215px;
+}
+.db-extra .card .icon{
+  color:var(--accent);
+}
+.db-highlight{
+  background:var(--soft);
+}
+.db-panel{
+  max-width:900px;
+  margin:auto;
+  padding:52px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:white;
+  text-align:center;
+}
+.db-panel h2{
+  font-size:clamp(28px,4vw,38px);
+  letter-spacing:-1.3px;
+  margin:16px 0;
+}
+.db-panel p{
+  max-width:640px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.9;
+}
+.db-status{
+  display:inline-block;
+  border:1px solid var(--line);
+  border-radius:99px;
+  padding:7px 13px;
+  color:var(--accent);
+  font-size:12px;
+  font-weight:600;
+}
+.db-pricing{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  max-width:850px;
+  margin:auto;
+}
+.db-plan{
+  padding:36px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:white;
+}
+.db-plan h3{
+  margin:0 0 12px;
+  font-size:23px;
+  letter-spacing:-.5px;
+}
+.db-plan p{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.85;
+  min-height:76px;
+}
+.db-plan .db-price{
+  font-size:27px;
+  font-weight:700;
+  color:var(--ink);
+  margin:20px 0;
+}
+.db-plan .db-small{
+  display:block;
+  color:#999;
+  font-size:12px;
+  line-height:1.8;
+}
+.db-plan-planned{
+  background:var(--soft);
+}
+@media(max-width:700px){
+  .db-panel{padding:34px 24px}
+  .db-pricing{grid-template-columns:1fr}
+  .db-plan{padding:29px}
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+<a class="brand" href="#">Data<span>Bridge</span></a>
+<div class="nav-right">
+<a class="nav-link" href="#features" data-en="Features" data-zh="功能">Features</a>
+<a class="nav-link" href="#privacy" data-en="Privacy" data-zh="隐私">Privacy</a>
+<a class="nav-link" href="#download" data-en="Download" data-zh="下载">Download</a>
+<div class="language-picker" id="languagePicker">
+  <button class="lang language-trigger"
+          id="langBtn"
+          type="button"
+          aria-label="Select language"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="languageMenu">
+    <span id="langLabel">EN</span>
+    <span class="language-chevron" aria-hidden="true">⌄</span>
+  </button>
+  <div class="language-menu" id="languageMenu" role="menu" hidden>
+    <button type="button" role="menuitemradio"
+            aria-checked="true" data-language="en">
+      <span>English</span><span class="language-check">✓</span>
+    </button>
+    <button type="button" role="menuitemradio"
+            aria-checked="false" data-language="zh">
+      <span>简体中文</span><span class="language-check"></span>
+    </button>
+  </div>
+</div>
+</div>
+</div>
+</header>
+
+<main>
+<div class="container">
+<div class="hero">
+<span class="badge">DataBridge 1.0.0 · macOS Apple Silicon</span>
+<h1 data-en="Make files<br>work together." data-zh="让文件处理<br>变得简单。">Make files<br>work together.</h1>
+<p data-en="Clean up spreadsheets, convert files, and get everyday tasks done without switching between apps." data-zh="整理表格、转换文件，无需在不同应用之间来回切换，轻松完成日常任务。">Clean up spreadsheets, convert files, and get everyday tasks done without switching between apps.</p>
+<div class="actions">
+<a class="btn primary" href="#download" data-en="↓ Download for macOS" data-zh="↓ 下载 macOS 版">↓ Download for macOS</a>
+<span class="btn secondary" data-en="Windows · Coming soon" data-zh="Windows · 即将推出">Windows · Coming soon</span>
+</div>
+<p class="note" data-en="Free public beta · Apple Silicon · macOS" data-zh="免费公开测试版 · 适用于 Apple 芯片 Mac">Free public beta · Apple Silicon · macOS</p>
+</div>
+
+<div class="preview">
+<div class="preview-inner">
+<div class="window-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+<div class="mock-body">
+<div class="mock-sidebar">
+<div class="mock-line"></div><div class="mock-line"></div><div class="mock-line"></div><div class="mock-line"></div>
+</div>
+<div class="mock-main">
+<div class="mock-title">DataBridge</div>
+<div class="mock-desc" data-en="Your everyday file workspace" data-zh="你的日常文件工作空间">Your everyday file workspace</div>
+<div class="mock-cards">
+<div class="mock-card">▤ &nbsp; Excel / CSV</div>
+<div class="mock-card">▧ &nbsp; Images</div>
+<div class="mock-card">▷ &nbsp; Video</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<section id="features">
+<div class="container">
+<div class="section-heading">
+<h2 data-en="The tools you need, in one app." data-zh="常用文件工具，一个应用就够了。">The tools you need, in one app.</h2>
+<p data-en="Handle spreadsheets, images, videos, and documents without juggling multiple apps." data-zh="无需在多个应用之间反复切换，即可处理表格、图片、视频和文档。">Handle spreadsheets, images, videos, and documents without juggling multiple apps.</p>
+</div>
+<div class="grid">
+<div class="card"><div class="icon">▤</div><h3>Excel & CSV</h3><p data-en="Clean up data, remove duplicates, merge files, and match tables." data-zh="清洗数据、删除重复项、合并文件并匹配表格。">Clean up data, remove duplicates, merge files, and match tables.</p></div>
+<div class="card"><div class="icon">▧</div><h3 data-en="Images" data-zh="图片">Images</h3><p data-en="Convert common image formats." data-zh="转换常见图片格式。">Convert common image formats.</p></div>
+<div class="card"><div class="icon">▷</div><h3 data-en="Audio & Video" data-zh="音视频">Audio & Video</h3><p data-en="Convert audio and video files between supported formats." data-zh="在受支持的格式之间转换音频和视频文件。">Convert audio and video files between supported formats.</p></div>
+<div class="card"><div class="icon">≡</div><h3 data-en="Documents" data-zh="文档">Documents</h3><p data-en="Turn Markdown into Word documents." data-zh="将 Markdown 转换为 Word 文档。">Turn Markdown into Word documents.</p></div>
+<div class="card"><div class="icon">⌁</div><h3 data-en="Everyday tasks" data-zh="日常任务">Everyday tasks</h3><p data-en="Keep your everyday file tools in one place." data-zh="将日常文件处理工具集中在一个工作空间。">Keep your everyday file tools in one place.</p></div>
+<div class="card"><div class="icon">⌘</div><h3 data-en="Desktop first" data-zh="桌面优先">Desktop first</h3><p data-en="Work with files directly on your computer." data-zh="直接在自己的电脑上处理文件。">Work with files directly on your computer.</p></div>
+</div>
+<div class="privacy" id="privacy">
+<h2 data-en="Your files stay on your computer." data-zh="文件处理，留在本机。">Your files stay on your computer.</h2>
+<p data-en="The current desktop app processes supported files locally. No account is required to use the included tools." data-zh="当前桌面版本在本机处理受支持的文件，使用内置工具无需注册账号。">The current desktop app processes supported files locally. No account is required to use the included tools.</p>
+</div>
+</div>
+</section>
+
+<section class="db-extra" id="problems">
+<div class="container">
+<div class="section-heading">
+<h2 data-en="Less time fixing files." data-zh="少花时间整理文件。">Less time fixing files.</h2>
+<p data-en="Merging spreadsheets, checking lists, and converting formats shouldn&#x27;t take up your afternoon." data-zh="合并表格、核对名单、转换格式，不应该占用你整个下午。">Merging spreadsheets, checking lists, and converting formats shouldn't take up your afternoon.</p>
+</div>
+<div class="grid">
+<div class="card"><div class="icon">01</div><h3 data-en="Tired of copying between spreadsheets?" data-zh="还在不同表格之间反复复制？">Tired of copying between spreadsheets?</h3><p data-en="Merge Excel and CSV files without copying and pasting rows by hand." data-zh="合并 Excel 和 CSV 文件，无需手动逐行复制粘贴。">Merge Excel and CSV files without copying and pasting rows by hand.</p></div>
+<div class="card"><div class="icon">02</div><h3 data-en="Need to compare two lists?" data-zh="需要核对两份名单？">Need to compare two lists?</h3><p data-en="Match records using a shared field, then review the results." data-zh="通过共同字段匹配记录，再检查匹配结果。">Match records using a shared field, then review the results.</p></div>
+<div class="card"><div class="icon">03</div><h3 data-en="Stuck converting files one by one?" data-zh="还在逐个转换文件格式？">Stuck converting files one by one?</h3><p data-en="Convert supported file formats without opening a different app for every task." data-zh="转换受支持的文件格式，无需为每项任务打开不同的软件。">Convert supported file formats without opening a different app for every task.</p></div>
+</div>
+</div>
+</section>
+
+<section class="db-extra db-highlight" id="online">
+<div class="container">
+<div class="db-panel">
+<span class="db-status" data-en="IN DEVELOPMENT" data-zh="开发规划中">IN DEVELOPMENT</span>
+<h2 data-en="DataBridge Online." data-zh="DataBridge 在线工具。">DataBridge Online.</h2>
+<p data-en="Clean, merge, and compare spreadsheets right in your browser. No installation needed. In development. Not available yet." data-zh="未来可直接在浏览器中清洗、合并和核对表格，无需安装软件。目前正在开发，尚未开放使用。">Clean, merge, and compare spreadsheets right in your browser. No installation needed. In development. Not available yet.</p>
+</div>
+</div>
+</section>
+
+<section class="db-extra" id="pricing">
+<div class="container">
+<div class="section-heading">
+<h2 data-en="Free today. More to come." data-zh="现在免费，更多功能陆续推出。">Free today. More to come.</h2>
+<p data-en="DataBridge is free during public beta. We&#x27;re working on more advanced tools for people who handle files regularly." data-zh="DataBridge 公开测试期间免费使用。我们正在规划面向高频文件处理需求的高级工具。">DataBridge is free during public beta. We're working on more advanced tools for people who handle files regularly.</p>
+</div>
+<div class="db-pricing">
+<div class="db-plan">
+<h3>Free</h3>
+<p data-en="All the tools included in the current desktop beta." data-zh="免费使用当前桌面测试版提供的全部内置工具。">All the tools included in the current desktop beta.</p>
+<div class="db-price" data-en="Free during beta" data-zh="测试期间免费">Free during beta</div>
+<span class="db-small" data-en="Available for Macs with Apple silicon." data-zh="现已开放 · 适用于 Apple 芯片 Mac">Available for Macs with Apple silicon.</span>
+</div>
+<div class="db-plan db-plan-planned">
+<h3>Pro</h3>
+<p data-en="Planned features include saved settings, repeatable tasks, and tools for more complex spreadsheets." data-zh="规划中的功能包括保存处理设置、重复执行常用任务，以及处理更复杂的表格。">Planned features include saved settings, repeatable tasks, and tools for more complex spreadsheets.</p>
+<div class="db-price" data-en="Coming later" data-zh="后续推出">Coming later</div>
+<span class="db-small" data-en="Features and pricing haven&#x27;t been finalized. Pro is not available for purchase." data-zh="功能和价格尚未确定，Pro 目前尚未开放购买。">Features and pricing haven't been finalized. Pro is not available for purchase.</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="download" id="download">
+<div class="container">
+<h2 data-en="Get DataBridge." data-zh="下载 DataBridge。">Get DataBridge.</h2>
+<p data-en="Free public beta for Macs with Apple silicon." data-zh="适用于 Apple 芯片 Mac 的免费公开测试版。">Free public beta for Macs with Apple silicon.</p>
+<div class="actions">
+<a class="btn primary" href="https://github.com/durian9188-jpg/databridge-releases/releases/download/v1.0.0/DataBridge-1.0.0-macOS-arm64-Branded.dmg" download="DataBridge-1.0.0-macOS-arm64.dmg" data-en="↓ macOS Apple Silicon" data-zh="↓ 下载 macOS Apple 芯片版">↓ macOS Apple Silicon</a>
+<span class="btn secondary" data-en="Windows · Coming soon" data-zh="Windows · 即将推出">Windows · Coming soon</span>
+</div>
+<p class="note" data-en="This beta isn&#x27;t notarized by Apple yet, so macOS may ask you to approve it before opening." data-zh="当前测试版尚未经过 Apple 公证，首次打开时 macOS 可能要求你手动批准。">This beta isn't notarized by Apple yet, so macOS may ask you to approve it before opening.</p>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-row">
+<span>© 2026 DataBridge</span>
+<span data-en="Made for everyday file tasks." data-zh="为日常文件处理而设计。">Made for everyday file tasks.</span>
+</div>
+</footer>
+
+<script>
+let currentLang='en';
+
+const languagePicker=document.getElementById('languagePicker');
+const languageTrigger=document.getElementById('langBtn');
+const languageMenu=document.getElementById('languageMenu');
+const languageLabel=document.getElementById('langLabel');
+
+function setLanguage(lang){
+  if(lang!=='en' && lang!=='zh') return;
+
+  currentLang=lang;
+  document.documentElement.lang=lang==='en'?'en':'zh-CN';
+
+  document.querySelectorAll('[data-en][data-zh]').forEach(el=>{
+    el.innerHTML=el.getAttribute('data-'+lang);
+  });
+
+  languageLabel.textContent=lang==='en'?'EN':'中文';
+
+  languageMenu.querySelectorAll('[data-language]').forEach(button=>{
+    const selected=button.dataset.language===lang;
+    button.setAttribute('aria-checked',String(selected));
+    button.querySelector('.language-check').textContent=selected?'✓':'';
+  });
+
+  try{
+    localStorage.setItem('databridge-language',lang);
+  }catch(error){}
+
+  closeLanguageMenu();
+}
+
+function closeLanguageMenu(){
+  languageMenu.hidden=true;
+  languageTrigger.setAttribute('aria-expanded','false');
+}
+
+languageTrigger.addEventListener('click',()=>{
+  const willOpen=languageMenu.hidden;
+  languageMenu.hidden=!willOpen;
+  languageTrigger.setAttribute('aria-expanded',String(willOpen));
+});
+
+languageMenu.querySelectorAll('[data-language]').forEach(button=>{
+  button.addEventListener('click',()=>{
+    setLanguage(button.dataset.language);
+    languageTrigger.focus();
+  });
+});
+
+document.addEventListener('click',event=>{
+  if(!languagePicker.contains(event.target)){
+    closeLanguageMenu();
+  }
+});
+
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape' && !languageMenu.hidden){
+    closeLanguageMenu();
+    languageTrigger.focus();
+  }
+});
+
+let savedLanguage='en';
+try{
+  const stored=localStorage.getItem('databridge-language');
+  if(stored==='en'||stored==='zh') savedLanguage=stored;
+}catch(error){}
+
+setLanguage(savedLanguage);
+
+
+</script>
+</body>
+</html>
