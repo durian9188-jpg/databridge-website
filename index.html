@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="DataBridge is a simple desktop workspace for Excel, CSV, images, video and documents.">
+<meta name="description" content="DataBridge is a simple desktop workspace for Excel normalization, CSV merge, table join, format conversion, and documents on macOS and Windows.">
 <title>DataBridge — Make files work together.</title>
 <style>
 :root{
@@ -29,7 +29,7 @@ header{height:76px;border-bottom:1px solid var(--line)}
 .hero{text-align:center;padding:112px 0 85px}
 .badge{display:inline-block;padding:8px 14px;border:1px solid var(--line);border-radius:30px;font-size:12px;color:#777;background:#fafafa}
 h1{font-size:clamp(45px,7vw,82px);letter-spacing:-4px;line-height:1.08;margin:30px 0 22px;font-weight:750}
-.hero p{font-size:18px;color:#737373;line-height:1.8;margin:0 auto;max-width:610px}
+.hero p{font-size:18px;color:#737373;line-height:1.8;margin:0 auto;max-width:640px}
 .actions{display:flex;gap:12px;justify-content:center;margin-top:38px;flex-wrap:wrap}
 .btn{padding:15px 25px;border-radius:11px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:10px}
 .primary{background:#191919;color:white}
@@ -50,15 +50,15 @@ h1{font-size:clamp(45px,7vw,82px);letter-spacing:-4px;line-height:1.08;margin:30
 section{padding:75px 0}
 .section-heading{text-align:center;margin-bottom:50px}
 .section-heading h2{font-size:38px;letter-spacing:-1.5px;margin:0 0 15px}
-.section-heading p{color:#888;font-size:15px}
+.section-heading p{color:#888;font-size:15px;max-width:680px;margin:0 auto;line-height:1.85}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{padding:29px;border:1px solid var(--line);border-radius:16px;min-height:190px;background:white}
-.card .icon{font-size:27px;margin-bottom:24px}
+.card{padding:29px;border:1px solid var(--line);border-radius:16px;min-height:210px;background:white}
+.card .icon{font-size:27px;margin-bottom:24px;color:var(--accent)}
 .card h3{font-size:17px;margin:0 0 12px}
 .card p{font-size:13px;color:#888;line-height:1.8;margin:0}
 .privacy{background:var(--soft);border-radius:22px;padding:55px;margin-top:45px}
 .privacy h2{font-size:30px;letter-spacing:-1px}
-.privacy p{max-width:720px;color:#777;line-height:1.9}
+.privacy p{max-width:760px;color:#777;line-height:1.9}
 .download{text-align:center;padding:110px 0}
 .download h2{font-size:44px;letter-spacing:-2px}
 .download p{color:#888}
@@ -199,49 +199,8 @@ h1{letter-spacing:-2px}
   font-size:12px;
   font-weight:600;
 }
-.db-pricing{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:18px;
-  max-width:850px;
-  margin:auto;
-}
-.db-plan{
-  padding:36px;
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:white;
-}
-.db-plan h3{
-  margin:0 0 12px;
-  font-size:23px;
-  letter-spacing:-.5px;
-}
-.db-plan p{
-  font-size:14px;
-  color:var(--muted);
-  line-height:1.85;
-  min-height:76px;
-}
-.db-plan .db-price{
-  font-size:27px;
-  font-weight:700;
-  color:var(--ink);
-  margin:20px 0;
-}
-.db-plan .db-small{
-  display:block;
-  color:#999;
-  font-size:12px;
-  line-height:1.8;
-}
-.db-plan-planned{
-  background:var(--soft);
-}
 @media(max-width:700px){
   .db-panel{padding:34px 24px}
-  .db-pricing{grid-template-columns:1fr}
-  .db-plan{padding:29px}
 }
 
 
@@ -390,7 +349,7 @@ h1{letter-spacing:-2px}
 <div class="nav-right">
 <a class="nav-link" href="#features" data-en="Features" data-zh="功能">Features</a>
 <a class="nav-link" href="#privacy" data-en="Privacy" data-zh="隐私">Privacy</a>
-            <a class="nav-link" href="https://github.com/durian9188-jpg/databridge-releases/discussions" target="_blank" rel="noopener noreferrer" data-en="Feedback" data-zh="反馈">Feedback</a>
+<a class="nav-link" href="https://github.com/durian9188-jpg/databridge-releases/discussions" target="_blank" rel="noopener noreferrer" data-en="Feedback" data-zh="反馈">Feedback</a>
 <a class="nav-link" href="#download" data-en="Download" data-zh="下载">Download</a>
 <div class="language-picker" id="languagePicker">
   <button class="lang language-trigger"
@@ -422,13 +381,13 @@ h1{letter-spacing:-2px}
 <div class="container">
 <div class="hero">
 <span class="badge" data-en="DataBridge 1.1.0 · macOS &amp; Windows" data-zh="DataBridge 1.1.0 · 支持 macOS 与 Windows">DataBridge 1.1.0 · macOS &amp; Windows</span>
-<h1 data-en="Make files<br>work together." data-zh="让文件处理<br>变得简单。">Make files<br>work together.</h1>
-<p data-en="Clean up spreadsheets, convert files, and get everyday tasks done without switching between apps." data-zh="整理表格、转换文件，无需在不同应用之间来回切换，轻松完成日常任务。">Clean up spreadsheets, convert files, and get everyday tasks done without switching between apps.</p>
+<h1 data-en="Stop wasting time on<br>repetitive file work." data-zh="别再把时间浪费在<br>重复整理文件上。">Stop wasting time on<br>repetitive file work.</h1>
+<p data-en="Normalize mismatched spreadsheets, merge tables, cross-check lists, and convert media—all processed locally on your computer." data-zh="异构表格规范整理、多表批量合并、双表字段核对与多媒体格式转换。无需在杂乱工具间反复切换，全部在电脑本地安全完成。">Normalize mismatched spreadsheets, merge tables, cross-check lists, and convert media—all processed locally on your computer.</p>
 <div class="actions">
 <a class="btn primary" href="#download" data-en="↓ Download for macOS" data-zh="↓ 下载 macOS 版">↓ Download for macOS</a>
 <a class="btn primary" href="#download" data-en="↓ Download for Windows" data-zh="↓ 下载 Windows 版">↓ Download for Windows</a>
 </div>
-<p class="note" data-en="Public Beta 1.1.0 · macOS Apple Silicon &amp; Windows 64-bit" data-zh="公开测试版 1.1.0 · 适用于 Apple 芯片 Mac 与 Windows 64位">Public Beta 1.1.0 · macOS Apple Silicon &amp; Windows 64-bit</p>
+<p class="note" data-en="Public Beta 1.1.0 · macOS (Apple Silicon) &amp; Windows (64-bit)" data-zh="公开测试版 1.1.0 · 适用于 Apple 芯片 Mac 与 Windows 64位">Public Beta 1.1.0 · macOS (Apple Silicon) &amp; Windows (64-bit)</p>
 </div>
 
 
@@ -438,21 +397,21 @@ h1{letter-spacing:-2px}
   <div class="db-v15-copy">
 
     <span class="db-v15-label"
-      data-en="A simpler spreadsheet workflow"
-      data-zh="更简单的表格整理方式">
-      A simpler spreadsheet workflow
+      data-en="Smart spreadsheet workflow"
+      data-zh="更智能的表格整理工作流">
+      Smart spreadsheet workflow
     </span>
 
     <h2
-      data-en="Stop copying between spreadsheets."
-      data-zh="几十个表格，不必一个个复制粘贴。">
-      Stop copying between spreadsheets.
+      data-en="Mismatched headers? Normalize and combine with confidence."
+      data-zh="不同供应商报价单表头各异？规范对齐后再合并。">
+      Mismatched headers? Normalize and combine with confidence.
     </h2>
 
     <p class="db-v15-description"
-      data-en="Combine Excel and CSV files without repeatedly opening files and copying data between them."
-      data-zh="多个 Excel 或 CSV 文件需要汇总？不必反复打开文件、复制数据，在一个工作台完成整理。">
-      Combine Excel and CSV files without repeatedly opening files and copying data between them.
+      data-en="Quotes and sales lists from different sources rarely share identical column names. DataBridge recognizes common header aliases, suggests mappings, highlights anomalies, and lets you review everything before exporting."
+      data-zh="来自不同供应商的报价单或各部门报表，表头名称与顺序往往各不相同（如“品名”、“商品名称”、“物料名称”）。DataBridge 智能匹配常用别名并建议映射，高亮异常数据，由您核验确认后再规范导出，彻底告别繁琐易错的手工整理。">
+      Quotes and sales lists from different sources rarely share identical column names. DataBridge recognizes common header aliases, suggests mappings, highlights anomalies, and lets you review everything before exporting.
     </p>
 
     <div class="db-v15-steps">
@@ -460,36 +419,36 @@ h1{letter-spacing:-2px}
       <div class="db-v15-step">
         <b>01</b>
         <span
-          data-en="Add your Excel or CSV files"
-          data-zh="添加 Excel 或 CSV 文件">
-          Add your Excel or CSV files
+          data-en="Add multiple Excel or CSV files"
+          data-zh="拖入多份 Excel 或 CSV 表格">
+          Add multiple Excel or CSV files
         </span>
       </div>
 
       <div class="db-v15-step">
         <b>02</b>
         <span
-          data-en="Choose merge, cleanup, or join"
-          data-zh="选择合并、智能整理或字段关联">
-          Choose merge, cleanup, or join
+          data-en="Map mismatched headers &amp; review anomalies"
+          data-zh="智能映射异构表头，人工复核异常与重复">
+          Map mismatched headers &amp; review anomalies
         </span>
       </div>
 
       <div class="db-v15-step">
         <b>03</b>
         <span
-          data-en="Review and export your result"
-          data-zh="检查并导出处理结果">
-          Review and export your result
+          data-en="Export unified clean workbook with zero overwrite"
+          data-zh="一键导出规范新表，原始文件完好无损">
+          Export unified clean workbook with zero overwrite
         </span>
       </div>
 
     </div>
 
     <p class="db-v15-note"
-      data-en="Local processing on your Mac. Original files stay intact."
-      data-zh="在 Mac 本地处理，保留原始文件。">
-      Local processing on your Mac. Original files stay intact.
+      data-en="100% local processing on macOS &amp; Windows. Source files stay safe and untouched."
+      data-zh="在您的电脑本地离线处理（支持 macOS 与 Windows）。安全防覆盖保护，绝不修改原始素材。">
+      100% local processing on macOS &amp; Windows. Source files stay safe and untouched.
     </p>
 
   </div>
@@ -523,20 +482,20 @@ h1{letter-spacing:-2px}
 <section id="features">
 <div class="container">
 <div class="section-heading">
-<h2 data-en="The tools you need, in one app." data-zh="常用文件工具，一个应用就够了。">The tools you need, in one app.</h2>
-<p data-en="Handle spreadsheets, images, videos, and documents without juggling multiple apps." data-zh="无需在多个应用之间反复切换，即可处理表格、图片、视频和文档。">Handle spreadsheets, images, videos, and documents without juggling multiple apps.</p>
+<h2 data-en="The tools you need, in one desktop app." data-zh="常用文件处理工具，一个桌面应用就够了。">The tools you need, in one desktop app.</h2>
+<p data-en="Handle spreadsheets, images, media files, and documents without juggling multiple clunky converters." data-zh="高效处理表格、图片、影音素材与文档，告别繁杂凌乱的小工具。">Handle spreadsheets, images, media files, and documents without juggling multiple clunky converters.</p>
 </div>
 <div class="grid">
-<div class="card"><div class="icon">▤</div><h3>Excel & CSV</h3><p data-en="Clean up data, remove duplicates, merge files, and match tables." data-zh="清洗数据、删除重复项、合并文件并匹配表格。">Clean up data, remove duplicates, merge files, and match tables.</p></div>
-<div class="card"><div class="icon">▧</div><h3 data-en="Images" data-zh="图片">Images</h3><p data-en="Convert common image formats." data-zh="转换常见图片格式。">Convert common image formats.</p></div>
-<div class="card"><div class="icon">▷</div><h3 data-en="Audio & Video" data-zh="音视频">Audio & Video</h3><p data-en="Convert audio and video files between supported formats." data-zh="在受支持的格式之间转换音频和视频文件。">Convert audio and video files between supported formats.</p></div>
-<div class="card"><div class="icon">≡</div><h3 data-en="Documents" data-zh="文档">Documents</h3><p data-en="Turn Markdown into Word documents." data-zh="将 Markdown 转换为 Word 文档。">Turn Markdown into Word documents.</p></div>
-<div class="card"><div class="icon">⌁</div><h3 data-en="Everyday tasks" data-zh="日常任务">Everyday tasks</h3><p data-en="Keep your everyday file tools in one place." data-zh="将日常文件处理工具集中在一个工作空间。">Keep your everyday file tools in one place.</p></div>
-<div class="card"><div class="icon">⌘</div><h3 data-en="Desktop first" data-zh="桌面优先">Desktop first</h3><p data-en="Work with files directly on your computer." data-zh="直接在自己的电脑上处理文件。">Work with files directly on your computer.</p></div>
+<div class="card"><div class="icon">▤</div><h3 data-en="Quotes &amp; Table Merge" data-zh="报价单整理与多表合并">Quotes &amp; Table Merge</h3><p data-en="Combine multi-file spreadsheets even when column headers differ. Built-in alias recognition maps fields like item name or SKU, while sensitive fields require manual confirmation." data-zh="多家供应商报价单表头不一致？智能识别常见别名字段，支持同表头快速合并与异构表头映射整理，敏感字段人工把关，杜绝盲目黑盒修改。">Combine multi-file spreadsheets even when column headers differ. Built-in alias recognition maps fields like item name or SKU, while sensitive fields require manual confirmation.</p></div>
+<div class="card"><div class="icon">⌁</div><h3 data-en="Dual-Table Key Matching" data-zh="双表字段关联核对">Dual-Table Key Matching</h3><p data-en="Match customer lists, orders, or inventory records using shared key fields like phone or ID. Instant preview lets you verify matches without manual VLOOKUP formulas." data-zh="客户名单、订单明细与库存表如何快速对齐？按手机号、编号或 SKU 等共有字段秒级建立关联并直观预览，告别容易出错的手动逐行查找。">Match customer lists, orders, or inventory records using shared key fields like phone or ID. Instant preview lets you verify matches without manual VLOOKUP formulas.</p></div>
+<div class="card"><div class="icon">≡</div><h3 data-en="AI Notes &amp; Tables to Word" data-zh="AI 文本与表格转 Word">AI Notes &amp; Tables to Word</h3><p data-en="Turn text, Markdown reports, and clipboard HTML tables copied from AI tools or web pages into clean, properly styled Word (.docx) documents with tables intact." data-zh="从 AI 工具或网页复制的长篇方案与多行多列表格，复制粘贴容易错位。直接将 Markdown 与剪贴板富文本导出为排版规范、样式规整的 Word 文档。">Turn text, Markdown reports, and clipboard HTML tables copied from AI tools or web pages into clean, properly styled Word (.docx) documents with tables intact.</p></div>
+<div class="card"><div class="icon">▧</div><h3 data-en="Image Format Conversion" data-zh="图片批量格式转换">Image Format Conversion</h3><p data-en="Convert web-downloaded WEBP images to standard PNG or JPG, or batch process PNG, JPG, and common graphics for easy sharing and office compatibility." data-zh="网页下载的 WEBP 格式在设计或办公软件打不开？一键批量在 WEBP、PNG、JPG 及常见图形格式间高速互转，兼容各类办公软件。">Convert web-downloaded WEBP images to standard PNG or JPG, or batch process PNG, JPG, and common graphics for easy sharing and office compatibility.</p></div>
+<div class="card"><div class="icon">▷</div><h3 data-en="Audio &amp; Video Transcoding" data-zh="音视频本地高速转码">Audio &amp; Video Transcoding</h3><p data-en="Transcode MOV recordings to universal MP4, or convert audio files between MP3, WAV, M4A, and FLAC using bundled local FFmpeg and hardware acceleration." data-zh="手机录制的 MOV 视频需要转为通用的 MP4？录音素材需要转为通用的 MP3 或 WAV？内建离线 FFmpeg 引擎本地转码，高效保护多媒体隐私。">Transcode MOV recordings to universal MP4, or convert audio files between MP3, WAV, M4A, and FLAC using bundled local FFmpeg and hardware acceleration.</p></div>
+<div class="card"><div class="icon">⌘</div><h3 data-en="Safe Output &amp; Protection" data-zh="源文件保护与本地隐私">Safe Output &amp; Protection</h3><p data-en="Strict Safe Output architecture guarantees original files are never overwritten or altered. Zero cloud uploads, no account sign-up, and clean temp cleanup." data-zh="严格执行 Safe Output 架构：永远不覆盖、不篡改您的原始源文件，输出冲突自动安全命名，任务取消立即清理临时碎片，全程脱机运行。">Strict Safe Output architecture guarantees original files are never overwritten or altered. Zero cloud uploads, no account sign-up, and clean temp cleanup.</p></div>
 </div>
 <div class="privacy" id="privacy">
-<h2 data-en="Your files stay on your computer." data-zh="文件处理，留在本机。">Your files stay on your computer.</h2>
-<p data-en="The current desktop app processes supported files locally. No account is required to use the included tools." data-zh="当前桌面版本在本机处理受支持的文件，使用内置工具无需注册账号。">The current desktop app processes supported files locally. No account is required to use the included tools.</p>
+<h2 data-en="Your sensitive numbers and files stay on your machine." data-zh="企业财务数据与核心文件，100% 留在本机。">Your sensitive numbers and files stay on your machine.</h2>
+<p data-en="Whether processing confidential customer lists, proprietary supplier quotes, or personal media, DataBridge operates strictly offline using local desktop engines. Zero data is uploaded to external servers, and no account sign-up is required." data-zh="无论是涉及商业机密的供应商底价、客户联系名单，还是个人影音素材，DataBridge 全程使用本机原生引擎离线运算。零云端上传、零数据回传、无需注册登录账号，从根源上消除文件泄密风险。">Whether processing confidential customer lists, proprietary supplier quotes, or personal media, DataBridge operates strictly offline using local desktop engines. Zero data is uploaded to external servers, and no account sign-up is required.</p>
 </div>
 </div>
 </section>
@@ -544,13 +503,13 @@ h1{letter-spacing:-2px}
 <section class="db-extra" id="problems">
 <div class="container">
 <div class="section-heading">
-<h2 data-en="Less time fixing files." data-zh="少花时间整理文件。">Less time fixing files.</h2>
-<p data-en="Merging spreadsheets, checking lists, and converting formats shouldn&#x27;t take up your afternoon." data-zh="合并表格、核对名单、转换格式，不应该占用你整个下午。">Merging spreadsheets, checking lists, and converting formats shouldn't take up your afternoon.</p>
+<h2 data-en="Less time fixing files, more time on real work." data-zh="少花时间折腾文件，专注真正重要的工作。">Less time fixing files, more time on real work.</h2>
+<p data-en="Mismatched quotes, tedious list checks, and incompatible media shouldn't take up your entire afternoon." data-zh="异构表头对齐、表格名单复核、格式打不开，不应该占用你整个下午。">Mismatched quotes, tedious list checks, and incompatible media shouldn't take up your entire afternoon.</p>
 </div>
 <div class="grid">
-<div class="card"><div class="icon">01</div><h3 data-en="Tired of copying between spreadsheets?" data-zh="还在不同表格之间反复复制？">Tired of copying between spreadsheets?</h3><p data-en="Merge Excel and CSV files without copying and pasting rows by hand." data-zh="合并 Excel 和 CSV 文件，无需手动逐行复制粘贴。">Merge Excel and CSV files without copying and pasting rows by hand.</p></div>
-<div class="card"><div class="icon">02</div><h3 data-en="Need to compare two lists?" data-zh="需要核对两份名单？">Need to compare two lists?</h3><p data-en="Match records using a shared field, then review the results." data-zh="通过共同字段匹配记录，再检查匹配结果。">Match records using a shared field, then review the results.</p></div>
-<div class="card"><div class="icon">03</div><h3 data-en="Stuck converting files one by one?" data-zh="还在逐个转换文件格式？">Stuck converting files one by one?</h3><p data-en="Convert supported file formats without opening a different app for every task." data-zh="转换受支持的文件格式，无需为每项任务打开不同的软件。">Convert supported file formats without opening a different app for every task.</p></div>
+<div class="card"><div class="icon">01</div><h3 data-en="Mismatched supplier quotes?" data-zh="各供应商报价单表头各叫各的？">Mismatched supplier quotes?</h3><p data-en="One vendor labels it &quot;Item Name&quot;, another &quot;Product Code&quot;; some include tax, others don't. DataBridge maps field aliases with user confirmation, so you can combine diverse quotes into one unified sheet." data-zh="这家叫“品名”，那家叫“商品全称”；有的含税，有的未税。智能整理根据别名规则建议对齐方式，高风险字段由人工确认把关，轻松导出标准化表格。">One vendor labels it "Item Name", another "Product Code"; some include tax, others don't. DataBridge maps field aliases with user confirmation, so you can combine diverse quotes into one unified sheet.</p></div>
+<div class="card"><div class="icon">02</div><h3 data-en="Lost in manual spreadsheet cross-checks?" data-zh="核对两张表格时容易眼花看漏？">Lost in manual spreadsheet cross-checks?</h3><p data-en="Cross-checking sales data against customer registries by hand is tedious and error-prone. Link two tables instantly by unique keys to reveal matched entries without fragile spreadsheet macros." data-zh="采购明细与入库清单对不上？通过物料编码或手机号等唯一主键建立快速关联，即时核对匹配记录与差异，告别眼花缭乱的手工逐行筛选查找。">Cross-checking sales data against customer registries by hand is tedious and error-prone. Link two tables instantly by unique keys to reveal matched entries without fragile spreadsheet macros.</p></div>
+<div class="card"><div class="icon">03</div><h3 data-en="Frustrated by incompatible file formats?" data-zh="经常被各种打不开的文件格式卡住？">Frustrated by incompatible file formats?</h3><p data-en="WEBP pictures that won't paste into presentations, MOV videos that fail in Windows players, or AI reports losing table columns. Convert them cleanly right on your desktop." data-zh="网页下载的 WEBP 无法插入 PPT、手机拍的 MOV 视频在 Windows 上播放受阻、AI 生成的报告复制出来表格全乱。在一个工作台内清爽搞定各种格式转换。">WEBP pictures that won't paste into presentations, MOV videos that fail in Windows players, or AI reports losing table columns. Convert them cleanly right on your desktop.</p></div>
 </div>
 </div>
 </section>
@@ -565,29 +524,6 @@ h1{letter-spacing:-2px}
 </div>
 </section>
 
-<section class="db-extra" id="pricing">
-<div class="container">
-<div class="section-heading">
-<h2 data-en="Simple, transparent plans." data-zh="清晰透明的免费与专业功能。">Simple, transparent plans.</h2>
-<p data-en="Essential file utilities are permanently free. Excel Pro tools include independent free trials." data-zh="日常基础文件工具永久免费，Excel Pro 高级功能享独立免费试用。">Essential file utilities are permanently free. Excel Pro tools include independent free trials.</p>
-</div>
-<div class="db-pricing">
-<div class="db-plan">
-<h3 data-en="Free" data-zh="基础免费版">Free</h3>
-<p data-en="Image conversion, audio and video transcoding, and text to Word. 100% local processing with zero quotas." data-zh="图片格式转换、音视频本地转码、文字转 Word 文档。纯本地安全处理，永久免费，不设额度限制。">Image conversion, audio and video transcoding, and text to Word. 100% local processing with zero quotas.</p>
-<div class="db-price" data-en="Free Forever" data-zh="永久免费">Free Forever</div>
-<span class="db-small" data-en="Available now for macOS &amp; Windows." data-zh="现已开放 · 适用于 macOS 与 Windows 平台">Available now for macOS &amp; Windows.</span>
-</div>
-<div class="db-plan db-plan-planned">
-<h3 data-en="Excel Pro" data-zh="Excel Pro 专业版">Excel Pro</h3>
-<p data-en="Table Merge, Smart Cleanup, and Dual-Table Join. Includes 3 independent free successful exports per feature (up to 9 total)." data-zh="表格批量合并、智能表头清洗整理、双表字段比对关联。每项操作享有独立 3 次免费成功导出体验（共计最高 9 次）。">Table Merge, Smart Cleanup, and Dual-Table Join. Includes 3 independent free successful exports per feature (up to 9 total).</p>
-<div class="db-price" data-en="¥9.99 / mo · $9.99 / mo" data-zh="国内 ¥9.99 / 月 · 海外 $9.99 / 月">¥9.99 / mo · $9.99 / mo</div>
-<span class="db-small" data-en="3×3 free trials open. Online store and activation services are in preparation." data-zh="3×3 独立试用体验现已开放 · 在线支付与发码服务筹备中（暂未开放公网购买）。">3×3 free trials open. Online store and activation services are in preparation.</span>
-</div>
-</div>
-</div>
-</section>
-
 <section class="download" id="download">
 <div class="container">
 <h2 data-en="Get DataBridge 1.1.0." data-zh="下载 DataBridge 1.1.0。">Get DataBridge 1.1.0.</h2>
@@ -598,6 +534,7 @@ h1{letter-spacing:-2px}
 <a class="btn" style="background:#f4f4f2;color:#333;border:1px solid #eaeae7;" href="https://github.com/durian9188-jpg/databridge-releases/releases/download/v1.1.0/DataBridge-1.1.0-Windows-x64-Portable.zip" download="DataBridge-1.1.0-Windows-x64-Portable.zip" data-en="↓ Windows Portable (.zip)" data-zh="↓ Windows 便携版 (.zip)">↓ Windows 便携版 (.zip)</a>
 </div>
 <p class="note" data-en="Community Beta Notice: macOS: If blocked, click 'Open Anyway' in System Settings → Privacy &amp; Security. Windows: If SmartScreen appears, click 'More info' → 'Run anyway'." data-zh="测试版安全提示：macOS 用户首次运行若提示未验证，请在「系统设置 → 隐私与安全性」中点击「仍要打开」；Windows 用户若提示 SmartScreen，请点击「更多信息」→「仍要运行」。">Community Beta Notice: macOS: If blocked, click 'Open Anyway' in System Settings → Privacy &amp; Security. Windows: If SmartScreen appears, click 'More info' → 'Run anyway'.</p>
+<p style="margin-top:16px;font-size:13px;"><a href="https://github.com/durian9188-jpg/databridge-releases/releases/tag/v1.1.0" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:underline;" data-en="View SHA-256 checksums &amp; release notes on GitHub →" data-zh="在 GitHub 查看完整 SHA-256 校验和与发布详情 →">View SHA-256 checksums &amp; release notes on GitHub →</a></p>
 </div>
 </section>
 </main>
@@ -680,7 +617,6 @@ try{
 }catch(error){}
 
 setLanguage(savedLanguage);
-
 
 </script>
 
