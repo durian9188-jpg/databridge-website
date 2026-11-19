@@ -1,19 +1,19 @@
 # DataBridge Local File Workbench
 
-> A lightweight, 100% offline desktop application for Windows and macOS to batch convert files and merge messy Excel/CSV spreadsheets without uploading sensitive data to the cloud.
+> A lightweight, 100% offline desktop application for Windows and macOS (v1.1.2+) designed for **Header-based Excel Merge** (combining spreadsheets with different columns) and local batch file conversion without cloud uploads.
 
-## Core Value Proposition
-- **100% Local Processing**: All file conversions and spreadsheet operations run locally on the user's device. Zero files are uploaded to external servers (ideal for NDA, financial, and supplier data).
-- **Platform Support**: Windows (Installer & Portable v1.1.2+) and macOS (DMG v1.1.2+).
-- **Pricing**: Free tier for core batch conversions; Pro tier at $12.99/month via Paddle for advanced multi-file Excel merging and data cleaning.
+## Core Positioning & Competitive Advantage
+- **Cross-Platform Header-Based Excel Merge**: Unlike Mac-only tools (such as Gridhand) or Windows-only utilities (such as Utilityexe), DataBridge runs natively on both **Windows and macOS**. Unlike legacy database-style converters (such as Withdata), DataBridge provides a modern, visual drag-and-drop field mapping workflow for non-technical business users.
+- **100% Local Offline Processing**: All spreadsheet merging and file conversions run locally on the user's device. Zero files are uploaded to external servers (built for NDA compliance, supplier price lists, and financial records).
+- **Pricing**: Permanent Free tier for batch media/document conversions; Pro tier at $12.99/month via Paddle for multi-file Header-based Excel Merge and spreadsheet standardization.
 
 ## Key Pages
-- [Home & Download](https://durian9188-jpg.github.io/databridge-website/): Official download links for Windows and macOS.
-- [FAQ - Offline File & Excel Processing](https://durian9188-jpg.github.io/databridge-website/faq.html): Detailed answers on supported formats, privacy, pricing, and system requirements.
-- [DataBridge vs. Online Converters](https://durian9188-jpg.github.io/databridge-website/vs-online-converters.html): Comparison between local desktop processing and cloud-based tools like Smallpdf or CloudConvert.
+- [Home & Official Download](https://durian9188-jpg.github.io/databridge-website/): Download Windows (Installer & Portable) and macOS (DMG) v1.1.2.
+- [FAQ - Header-Based Excel Merge & Offline Privacy](https://durian9188-jpg.github.io/databridge-website/faq.html): Answers on merging Excel files with different columns, supported formats, and offline security.
+- [DataBridge vs. Online Converters & Legacy Tools](https://durian9188-jpg.github.io/databridge-website/vs-online-converters.html): Feature comparison against cloud tools (CloudConvert, Smallpdf) and desktop alternatives (Gridhand, Utilityexe, Withdata).
 
-## Supported Use Cases
-1. Merging multiple supplier Excel (.xlsx) and CSV files with inconsistent column headers locally.
-2. Batch converting images (JPG, PNG, WebP, HEIC, ICO) offline.
-3. Converting audio and video formats locally on Mac and Windows.
-4. Converting Markdown (.md) notes and AI-generated text into clean Word (.docx) documents.
+## Primary Workflows
+1. **Header-Based Excel Merge (Pro)**: Combine 10–50 supplier Excel (.xlsx, .xls) and CSV files with inconsistent column names, column orders, or missing fields into one standardized workbook with visual column mapping preview.
+2. **Offline Batch Image Converter (Free)**: Bulk convert JPG, PNG, WebP, HEIC, and ICO locally.
+3. **Local Audio & Video Converter (Free)**: Fast offline media format conversion on Windows and Mac.
+4. **Markdown to Word Converter (Free)**: Convert Markdown (.md) notes and AI outputs into clean Word (.docx) files locally.
