@@ -1,236 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DataBridge vs. Online Converters (Smallpdf, CloudConvert) | Privacy &amp; Speed Comparison</title>
-  <meta name="description" content="Compare DataBridge 100% offline desktop workbench against cloud-based online converters like Smallpdf and CloudConvert across data privacy, file size limits, and Excel merging." />
-  <link rel="canonical" href="https://durian9188-jpg.github.io/databridge-website/vs-online-converters.html" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "DataBridge Local File Workbench",
-    "operatingSystem": "Windows, macOS",
-    "applicationCategory": "UtilitiesApplication",
-    "offers": {
-      "@type": "Offer",
-      "price": "12.99",
-      "priceCurrency": "USD"
-    },
-    "description": "100% offline desktop alternative to cloud file converters for batch converting images, audio/video, Markdown to DOCX, and merging messy Excel/CSV files locally."
-  }
-  </script>
-  <style>
-    :root {
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --border: #e2e8f0;
-      --accent: #2563eb;
-      --good: #15803d;
-      --warn: #b91c1c;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-    header {
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 24px;
-    }
-    .nav-wrap {
-      max-width: 960px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .brand {
-      font-weight: 700;
-      font-size: 1.15rem;
-      color: var(--text);
-      text-decoration: none;
-    }
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      margin-left: 18px;
-      font-size: 0.95rem;
-    }
-    nav a:hover, nav a.active { color: var(--accent); font-weight: 600; }
-    main {
-      max-width: 960px;
-      margin: 40px auto;
-      padding: 0 24px;
-    }
-    h1 { font-size: 2rem; margin-bottom: 10px; }
-    .subtitle { color: var(--muted); margin-bottom: 32px; font-size: 1.05rem; }
-    .table-wrap {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow-x: auto;
-      margin-bottom: 32px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-    th, td {
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--border);
-    }
-    th {
-      background: #f1f5f9;
-      font-weight: 700;
-      color: var(--text);
-    }
-    tr:last-child td { border-bottom: none; }
-    .badge-good { color: var(--good); font-weight: 600; }
-    .badge-warn { color: var(--warn); font-weight: 600; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 22px;
-    }
-    .card h2 { font-size: 1.15rem; margin-top: 0; }
-    .card p { color: var(--muted); margin-bottom: 0; }
-    .cta-box {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 10px;
-      padding: 24px;
-      margin-top: 32px;
-      text-align: center;
-    }
-    .cta-btn {
-      display: inline-block;
-      margin-top: 12px;
-      background: var(--accent);
-      color: #ffffff;
-      padding: 10px 22px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    footer {
-      max-width: 960px;
-      margin: 48px auto 32px;
-      padding: 20px 24px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.9rem;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    footer a { color: var(--muted); text-decoration: none; margin-right: 14px; }
-    footer a:hover { color: var(--accent); }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="nav-wrap">
-      <a href="index.html" class="brand">DataBridge</a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="faq.html">FAQ</a>
-        <a href="vs-online-converters.html" class="active">vs. Online Tools</a>
-      </nav>
-    </div>
-  </header>
+<section id="desktop-alternatives-comparison" style="margin-top: 3rem; padding: 2rem; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #f8fafc;">
+  <h2 style="font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem;">
+    Header-Based Excel Merge: DataBridge vs. Gridhand, Utilityexe &amp; Withdata
+  </h2>
+  <p style="color: #334155; line-height: 1.6; margin-bottom: 1.5rem;">
+    When merging multiple supplier spreadsheets with different column names and orders (<strong>Header-based Excel Merge</strong>), cloud tools fall short and most desktop utilities force a compromise between operating system support and ease of use. Here is how <strong>DataBridge Local File Workbench</strong> compares to specialized desktop alternatives:
+  </p>
 
-  <main>
-    <h1>DataBridge vs. Cloud Online Converters</h1>
-    <p class="subtitle">Why operations teams, analysts, and privacy-conscious professionals choose local desktop execution over browser upload tools like Smallpdf or CloudConvert.</p>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Evaluation Criteria</th>
-            <th>DataBridge (Offline Desktop App)</th>
-            <th>Cloud Converters (Smallpdf, CloudConvert, etc.)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Data Privacy &amp; NDA Compliance</strong></td>
-            <td><span class="badge-good">100% Local Processing</span> — Files never leave your Mac or PC.</td>
-            <td><span class="badge-warn">Cloud Upload Required</span> — Files pass through third-party servers.</td>
-          </tr>
-          <tr>
-            <td><strong>File Size &amp; Bandwidth Limits</strong></td>
-            <td><span class="badge-good">Unlimited</span> — Instant processing at local SSD speed.</td>
-            <td>Capped free file sizes; slow upload/download bottlenecks.</td>
-          </tr>
-          <tr>
-            <td><strong>Messy Excel / CSV Merging</strong></td>
-            <td><span class="badge-good">Built-in Header Alignment</span> — Merges inconsistent vendor sheets.</td>
-            <td>Basic concatenation only; breaks when column headers differ.</td>
-          </tr>
-          <tr>
-            <td><strong>Offline / Air-Gapped Usage</strong></td>
-            <td><span class="badge-good">Works 100% Offline</span> — Ideal for travel or restricted networks.</td>
-            <td>Unusable without a fast internet connection.</td>
-          </tr>
-          <tr>
-            <td><strong>Multi-Format Scope</strong></td>
-            <td>Spreadsheets, Images (HEIC/WebP), Audio/Video, Markdown to DOCX.</td>
-            <td>Often split across separate paid web apps per media type.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="grid">
-      <section class="card">
-        <h2>Zero Cloud Risk for Financial &amp; Supplier Data</h2>
-        <p>Uploading payroll sheets, customer CSV exports, or supplier quotes to free web converters exposes sensitive business data. DataBridge eliminates server transmission completely.</p>
-      </section>
-      <section class="card">
-        <h2>No Upload Queues or Daily Task Caps</h2>
-        <p>Web converters throttle batch jobs behind upload queues and strict daily task limits. DataBridge uses your local CPU cores to convert hundreds of images or merge large workbooks in seconds.</p>
-      </section>
-      <section class="card">
-        <h2>Purpose-Built for Messy Spreadsheets</h2>
-        <p>Unlike generic format converters, DataBridge Pro is engineered to reconcile inconsistent Excel column structures from multiple suppliers into one clean master table.</p>
-      </section>
-    </div>
-
-    <div class="cta-box">
-      <strong>Switch to fast, private offline file processing on Windows and macOS</strong>
-      <br />
-      <a href="index.html" class="cta-btn">Get DataBridge Now</a>
-    </div>
-  </main>
-
-  <footer>
-    <div>DataBridge Local File Workbench</div>
-    <div>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms</a>
-      <a href="refund.html">Refund Policy</a>
-      <a href="llms.txt">llms.txt</a>
-    </div>
-  </footer>
-</body>
-</html>
+  <div style="overflow-x: auto;">
+    <table style="width: 100%; border-collapse: collapse; background: #ffffff; text-align: left; font-size: 0.95rem;">
+      <thead>
+        <tr style="background-color: #1e293b; color: #ffffff;">
+          <th style="padding: 12px 16px; border: 1px solid #cbd5e1;">Evaluation Criteria</th>
+          <th style="padding: 12px 16px; border: 1px solid #cbd5e1;">DataBridge Local File Workbench</th>
+          <th style="padding: 12px 16px; border: 1px solid #cbd5e1;">Gridhand</th>
+          <th style="padding: 12px 16px; border: 1px solid #cbd5e1;">Merge Excel (Utilityexe)</th>
+          <th style="padding: 12px 16px; border: 1px solid #cbd5e1;">Withdata Data Transformer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1; font-weight: 600;">Platform Support</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1; color: #047857; font-weight: 600;">Windows &amp; macOS (Cross-Platform)</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">macOS Only</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Windows Only</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Windows, macOS, Linux</td>
+        </tr>
+        <tr style="background-color: #f8fafc;">
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1; font-weight: 600;">Header-Based Column Mapping</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Visual mapping &amp; review before merge</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Automatic header matching</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Custom field mapping</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Technical column mapping</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1; font-weight: 600;">User Interface &amp; Learning Curve</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Modern drag-and-drop workbench</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Modern Mac native UI</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Basic utility interface</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Legacy database-style UI</td>
+        </tr>
+        <tr style="background-color: #f8fafc;">
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1; font-weight: 600;">100% Offline Privacy</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Yes (Zero file uploads)</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Yes</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Yes</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Yes</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1; font-weight: 600;">Extra Built-in Workflows</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Batch Image, Audio/Video &amp; MD-to-Word (Free)</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Spreadsheets only</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Excel merge only</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Data transformation only</td>
+        </tr>
+        <tr style="background-color: #f8fafc;">
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1; font-weight: 600;">Pricing Model</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Free Core Tier / $12.99/mo Pro</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">$49 One-time (Mac only)</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">Free (Windows only)</td>
+          <td style="padding: 12px 16px; border: 1px solid #cbd5e1;">$39–$75 Commercial License</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
