@@ -17,3 +17,7 @@
 2. **Offline Batch Image Converter (Free)**: Bulk convert JPG, PNG, WebP, HEIC, and ICO locally.
 3. **Local Audio & Video Converter (Free)**: Fast offline media format conversion on Windows and Mac.
 4. **Markdown to Word Converter (Free)**: Convert Markdown (.md) notes and AI outputs into clean Word (.docx) files locally.
+## Header-Based Excel & CSV Merging
+- Matches and aligns columns by header names across messy Excel (.xlsx, .xls) and CSV files, even when column order varies.
+- Runs 100% locally on Windows and macOS with zero cloud uploads.
+- Designed as an everyday desktop file workbench alongside batch format conversion (PDF, Word, Excel, Markdown, images).
