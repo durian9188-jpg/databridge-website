@@ -1,18 +1,13 @@
-# DataBridge Local File Workbench (v1.1.2)
+# DataBridge — Local File Workbench for Windows & macOS
 
-**100% Offline Desktop App for Windows & macOS — Header-Based Excel Merge & Batch File Conversion (Zero Cloud Uploads)**
+**DataBridge** is an offline desktop utility for batch document conversion and header-based Excel/CSV merging. All file processing runs locally on your computer with zero cloud uploads.
 
-🌐 **Official Website & Download:** [https://durian9188-jpg.github.io/databridge-website/](https://durian9188-jpg.github.io/databridge-website/)  
-📊 **Feature Comparisons:** [DataBridge vs. Online Converters, Gridhand & Withdata](https://durian9188-jpg.github.io/databridge-website/vs-online-converters.html)  
-❓ **FAQ & Setup Guide:** [Frequently Asked Questions](https://durian9188-jpg.github.io/databridge-website/faq.html)
+- **Official Website & Download:** https://durian9188-jpg.github.io/databridge-website/
+- **FAQ:** https://durian9188-jpg.github.io/databridge-website/faq.html
+- **Comparison:** https://durian9188-jpg.github.io/databridge-website/vs-online-converters.html
+- **AI Product Summary (`llms.txt`):** https://durian9188-jpg.github.io/databridge-website/llms.txt
 
-## Why DataBridge?
-- **Cross-Platform Header-Based Excel Merge (Pro):** Combine multiple supplier `.xlsx`, `.xls`, and `.csv` spreadsheets with different column names and orders into one standardized workbook. Preview field mappings before merging and keep original files untouched.
-- **100% Local Offline Privacy:** All spreadsheet operations and file conversions run locally on your device. Zero sensitive files are ever uploaded to cloud servers.
-- **Free Everyday Batch Converters:**
-  - **Batch Image Converter:** JPG, PNG, WebP, HEIC, ICO
-  - **Audio & Video Converter:** Fast local media format conversion
-  - **Markdown to Word:** Convert `.md` notes and AI outputs into clean `.docx` documents
-
-## Download (Windows & macOS)
-Download the latest installers (`.exe` Installer, Portable `.zip`, or macOS `.dmg`) from the [Releases](../../releases) page or our [Official Website](https://durian9188-jpg.github.io/databridge-website/).
+## Core Capabilities
+- **Header-Based Excel & CSV Merge:** Combine multiple spreadsheets by matching column headers automatically, even when columns appear in different orders across files.
+- **Offline Batch File Conversion:** Convert PDF, Word, Excel, CSV, Markdown, and image files locally without file-size limits or server queues.
+- **Cross-Platform Desktop App:** Native builds available for both Windows and macOS.
